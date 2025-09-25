@@ -1,0 +1,147 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      background-color: #f5f0f5;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 24px;
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #e87a9f;
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    .form-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      white-space: nowrap;
+    }
+
+    .form-group input[type="number"] {
+      width: 180px;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-family: inherit;
+      text-align: center;
+    }
+
+    .operators {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 16px 0;
+    }
+
+    .operators button {
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+      color: #333;
+    }
+
+    .operators button:hover {
+      background: #f8a5c2;
+      color: white;
+      border-color: #e87a9f;
+    }
+
+    .output-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .output-group label {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      white-space: nowrap;
+    }
+
+    .output-group input {
+      width: 180px;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      text-align: center;
+      background: #fafafa;
+      font-weight: bold;
+      color: #7a0000;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 20px;
+      }
+
+      .form-group,
+      .output-group {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .form-group label,
+      .output-group label {
+        margin-bottom: 6px;
+      }
+
+      .form-group input[type="number"],
+      .output-group input {
+        width: 100%;
+        max-width: 250px;
+      }
+
+      .operators {
+        justify-content: center;
+      }
+
+      .operators button {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+      }
+    }

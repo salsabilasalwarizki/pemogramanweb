@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalkulator Sederhana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="kalkulator.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Kalkulator Sederhana</h2>
+
+    <div class="form-group">
+      <label for="bilangan1">Input Bilangan 1</label>
+      <input type="number" id="bilangan1" placeholder="Silahkan Masukkan Bilangan 1" />
+    </div>
+
+    <div class="form-group">
+      <label for="bilangan2">Input Bilangan 2</label>
+      <input type="number" id="bilangan2" placeholder="Silahkan Masukkan Bilangan 2" />
+    </div>
+
+    <div class="operators">
+      <button onclick="calculate('+')">+</button>
+      <button onclick="calculate('-')">−</button>
+      <button onclick="calculate('*')">×</button>
+      <button onclick="calculate('/')">÷</button>
+    </div>
+
+    <div class="output-group">
+      <label for="result">Output</label>
+      <input type="text" id="result" readonly placeholder="Berikut Hasilnya :D"/>
+    </div>
+  </div>
+
+  <script>
+    function calculate(op) {
+      const a = parseFloat(document.getElementById('bilangan1').value);
+      const b = parseFloat(document.getElementById('bilangan2').value);
+      const res = document.getElementById('result');
+
+      if (isNaN(a) || isNaN(b)) {
+        res.value = "Input tidak valid";
+        return;
+      }
+
+      let hasil;
+      switch(op) {
+        case '+': hasil = a + b; break;
+        case '-': hasil = a - b; break;
+        case '*': hasil = a * b; break;
+        case '/': 
+          if (b === 0) {
+            res.value = "Tidak bisa dibagi 0";
+            return;
+          }
+          hasil = a / b;
+          break;
+        default: hasil = "Error";
+      }
+
+      res.value = hasil;
+    }
+  </script>
+</body>
+</html>
